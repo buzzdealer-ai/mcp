@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.buzzdealer/buzzdealer-ai",
+  "title": "Buzz Dealer AI",
+  "description": "Press Room and Reputation Agent for your AI: publish news, and see how search and AI describe you.",
+  "version": "1.1.0",
+  "websiteUrl": "https://buzzdealer.ai",
+  "icons": [
+    {
+      "src": "https://buzzdealer.ai/icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://buzzdealer.ai/icon-192.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "192x192"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.buzzdealer.ai/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional: \"Bearer <personal API key>\" for clients without OAuth. Without it, the client signs in with OAuth.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
