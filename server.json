@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.buzzdealer-ai/mcp",
   "title": "Buzz Dealer AI",
-  "description": "Press Room and Reputation Agent for your AI: publish news, and see how search and AI describe you.",
-  "version": "1.1.0",
+  "description": "PR and press release distribution via newswires, plus a Reputation Agent, for your AI assistant.",
+  "version": "1.2.0",
   "websiteUrl": "https://buzzdealer.ai",
   "icons": [
     {

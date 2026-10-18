@@ -1,6 +1,6 @@
 # Buzz Dealer AI MCP server
 
-Publish and protect your reputation from ChatGPT, Claude and other AI assistants. Buzz Dealer AI gives your assistant two things: a **Press Room** to place articles and press releases on real news sites, and a **Reputation Agent** that scans what Google, AI engines and the web say about you or your company, asks what it cannot know, and helps you fix the gaps.
+PR and press release distribution, and reputation, from ChatGPT, Claude and other AI assistants. Buzz Dealer AI gives your assistant two things: a **Press Room** for press release distribution through newswires (including PR Newswire packages), PR distribution packages and news sites that publish your article or press release, and a **Reputation Agent** that scans what Google, AI assistants and the web say about you or your company, asks what it cannot know, and shows the gaps and the steps that help.
 
 **Connector address:** https://mcp.buzzdealer.ai/mcp (remote MCP server, streamable HTTP)
 **Sign-in:** OAuth 2.1. Agents that cannot do OAuth can use a personal API key as a Bearer token.
@@ -8,7 +8,8 @@ Publish and protect your reputation from ChatGPT, Claude and other AI assistants
 **Pricing:** https://buzzdealer.ai/pricing
 **Support:** support@buzzdealer.ai
 
-**Private beta:** Buzz Dealer AI is in private beta. To join, request an invite at https://buzzdealer.ai or write to support@buzzdealer.ai.
+**Access:** the Reputation Agent is open to everyone. The Press Room is in private beta: request an invite at https://buzzdealer.ai/beta.
+**Before signing in:** two read-only tools work without an account, `check_company_presence` (a light check of a company's own home page and Wikidata) and `get_ai_visibility_score`. Everything else asks you to sign in.
 
 This repository is the public listing for the hosted server. It has no server code.
 
@@ -63,7 +64,9 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 - Run the reputation radar on my own name
 - What should I fix first?
 - Send this press release to a UK finance newswire
-- Plan a $3,000 PR campaign around our funding round
+- Find a PR distribution package for my product announcement
+- Plan a PR campaign within a budget around our funding round
+- Which Buzz Dealer AI account is this connection using?
 - Alert me on new reviews and mentions
 
 ## Tools
@@ -72,14 +75,16 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 
 | Tool | What it does |
 | --- | --- |
-| find_publications | Finds news sites and press release packages in the Press Room |
+| find_publications | Finds newswire packages, PR distribution packages and news sites in the Press Room |
 | get_publication | Shows one publication: price, audience, rules and turnaround |
 | plan_campaign | Plans a campaign within a budget |
-| get_ai_visibility_score | Shows how visible a site is to AI engines (beta) |
+| get_ai_visibility_score | Shows how visible a news site in the catalog is to AI assistants (beta; works before signing in) |
 | check_originality_and_fit | Checks a text before it is ordered |
 | get_order_status | Shows where an order is |
 | get_report | Shows a report |
 | get_account_status | Shows the account, balance and limits |
+| get_linked_account | Shows which account this connection uses: name, plan and balance |
+| check_company_presence | A light check of a company's own home page and Wikidata (works before signing in) |
 | get_radar_status | Reads a reputation scan as it runs |
 | get_questions | Gets the next question the agent cannot answer alone |
 | get_gaps | Lists the gaps found and the fixes for each |
@@ -113,6 +118,10 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 | respond_to_replacement | Accepts or declines a replacement site |
 | order_audit | Orders a research report with a PDF |
 
+## Prompts
+
+The server also offers five prompts: send a press release to a newswire, find a PR distribution package, how AI assistants describe my company, what changed since the last scan, and plan a PR campaign within a budget. Each one quotes first and orders nothing without your yes.
+
 ## Pricing
 
 Every order is quoted first, and the assistant asks you before anything that spends credits. An item is charged only when it is published; if it is not published, the credits come back. Credits are added by a person in the Buzz Dealer AI dashboard, never in the chat. Plans and prices: https://buzzdealer.ai/pricing
@@ -124,6 +133,7 @@ Buzz Dealer AI receives only what your assistant sends to its tools, never your 
 - Privacy: https://buzzdealer.ai/privacy
 - Terms: https://buzzdealer.ai/terms
 - Refund policy: https://buzzdealer.ai/refund-policy
+- Security: https://buzzdealer.ai/security
 - Help and contact: https://buzzdealer.ai/contact
 
 ## Support
