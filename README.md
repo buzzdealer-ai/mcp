@@ -77,7 +77,6 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 | plan_campaign | Plans a campaign within a budget |
 | get_ai_visibility_score | Shows how visible a site is to AI engines (beta) |
 | check_originality_and_fit | Checks a text before it is ordered |
-| quote_order | Quotes an order; nothing is reserved |
 | get_order_status | Shows where an order is |
 | get_report | Shows a report |
 | get_account_status | Shows the account, balance and limits |
@@ -85,7 +84,6 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 | get_questions | Gets the next question the agent cannot answer alone |
 | get_gaps | Lists the gaps found and the fixes for each |
 | plan_fixes | Same as get_gaps |
-| start_fix | Shows the steps of a fix |
 | get_progress | Shows progress against the first scan |
 | what_changed | Shows what changed since the last scan |
 | get_playbook | Gets the Reputation Agent playbook |
@@ -97,6 +95,8 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 | Tool | What it does |
 | --- | --- |
 | start_radar | Starts a reputation scan |
+| quote_order | Quotes an order and holds the price; nothing is charged |
+| start_fix | Starts a fix and shows its steps |
 | radar_scan | Same as start_radar |
 | answer_question | Answers a question ("this is mine", "this is about me", "not me") |
 | confirm_statement | Same as answer_question |
@@ -115,7 +115,7 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 
 ## Pricing
 
-The Reputation Agent is free, with a monthly rescan. Pro costs €69 a month and includes 10 research reports a month. The Press Room is pay per order from prepaid credits (1 credit = $1). Every order is quoted first, and an item is charged only when it is published; if it is not published, the credits come back. Credits are added by a person on buzzdealer.ai, never in the chat. Details: https://buzzdealer.ai/pricing
+Every order is quoted first, and the assistant asks you before anything that spends credits. An item is charged only when it is published; if it is not published, the credits come back. Credits are added by a person in the Buzz Dealer AI dashboard, never in the chat. Plans and prices: https://buzzdealer.ai/pricing
 
 ## Privacy and terms
 
