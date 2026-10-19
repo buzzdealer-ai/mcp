@@ -13,6 +13,8 @@ PR and press release distribution, and reputation, from ChatGPT, Claude and othe
 
 This repository is the public listing for the hosted server. It has no server code.
 
+**Directories:** listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/) as `io.github.buzzdealer-ai/mcp`. Maintainer of this listing: [@uri-bd](https://github.com/uri-bd) (see `glama.json`).
+
 ## Add it to your assistant
 
 ### Claude (web, desktop and mobile)
