@@ -1,0 +1,20 @@
+{
+  "name": "buzzdealer-ai",
+  "displayName": "Buzz Dealer AI",
+  "version": "1.3.0",
+  "description": "PR and press release distribution via newswires (the Press Room) and a Reputation Agent, through the Buzz Dealer AI remote MCP server, with the agent skill for the safe order flow.",
+  "author": {
+    "name": "Buzz Dealer",
+    "email": "support@buzzdealer.ai",
+    "url": "https://buzzdealer.ai"
+  },
+  "homepage": "https://buzzdealer.ai",
+  "repository": "https://github.com/buzzdealer-ai/mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "press-release", "pr-distribution", "newswire", "press-room", "reputation", "ai-visibility"],
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://buzzdealer.ai/connect",
+  "supportUrl": "https://buzzdealer.ai/contact",
+  "privacyPolicyUrl": "https://buzzdealer.ai/privacy",
+  "termsOfServiceUrl": "https://buzzdealer.ai/terms"
+}

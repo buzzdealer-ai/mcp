@@ -1,0 +1,61 @@
+{
+  "name": "buzzdealer-ai",
+  "version": "1.3.0",
+  "description": "Connect AI assistants and coding agents to the Buzz Dealer AI MCP server (Press Room and Reputation Agent), plus a small typed client for its REST API.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Buzz Dealer <support@buzzdealer.ai> (https://buzzdealer.ai)",
+  "homepage": "https://buzzdealer.ai/connect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buzzdealer-ai/mcp.git",
+    "directory": "packages/npm"
+  },
+  "bugs": {
+    "url": "https://github.com/buzzdealer-ai/mcp/issues",
+    "email": "support@buzzdealer.ai"
+  },
+  "keywords": [
+    "buzzdealer-ai",
+    "mcp",
+    "model-context-protocol",
+    "press-release",
+    "pr-distribution",
+    "newswire",
+    "press-room",
+    "reputation",
+    "ai-visibility",
+    "claude-code",
+    "cursor",
+    "vscode"
+  ],
+  "bin": {
+    "buzzdealer-ai": "dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/client.test.mjs test/cli.test.mjs",
+    "prepublishOnly": "npm run build && node --test test/client.test.mjs test/cli.test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^5.9.3"
+  }
+}

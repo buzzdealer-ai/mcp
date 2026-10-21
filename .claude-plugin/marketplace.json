@@ -1,0 +1,16 @@
+{
+  "name": "buzzdealer-ai",
+  "owner": {
+    "name": "Buzz Dealer",
+    "email": "support@buzzdealer.ai",
+    "url": "https://buzzdealer.ai"
+  },
+  "description": "The Buzz Dealer AI plugin: the remote MCP server and the agent skill.",
+  "plugins": [
+    {
+      "name": "buzzdealer-ai",
+      "source": "./",
+      "description": "PR and press release distribution via newswires (the Press Room) and a Reputation Agent, for your AI assistant."
+    }
+  ]
+}

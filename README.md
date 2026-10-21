@@ -61,6 +61,18 @@ Add a server named `buzzdealer-ai` with the address `https://mcp.buzzdealer.ai/m
 
 Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and Meta Muse are on https://buzzdealer.ai/connect.
 
+## For coding agents, plugins and packages
+
+- **AGENTS.md:** [AGENTS.md](AGENTS.md) tells coding agents how to connect, which tools there are and the safe order for anything that spends. Example configs: [.cursor/mcp.json](.cursor/mcp.json) and [.vscode/mcp.json](.vscode/mcp.json).
+- **Claude Code plugin:** this repository is also a plugin ([.claude-plugin/plugin.json](.claude-plugin/plugin.json), with the server in [.mcp.json](.mcp.json) and the agent skill). Install it with:
+  ```
+  /plugin install buzzdealer-ai --marketplace buzzdealer-ai/mcp
+  ```
+  On an older Claude Code: `/plugin marketplace add buzzdealer-ai/mcp`, then `/plugin install buzzdealer-ai@buzzdealer-ai`.
+- **Agent skill:** [skills/buzzdealer-ai/SKILL.md](skills/buzzdealer-ai/SKILL.md), the order flow and the rules. On skills.sh, once this repository is public, the expected command is `npx skills add buzzdealer-ai/mcp`.
+- **npm package (not yet published):** [packages/npm](packages/npm), `npx buzzdealer-ai add cursor`, `add vscode` or `add claude-code`, plus a small typed client for the REST API.
+- **MCP Registry:** `io.github.buzzdealer-ai/mcp`, see https://registry.modelcontextprotocol.io/v0/servers?search=io.github.buzzdealer-ai/mcp
+
 ## Example prompts
 
 - Run the reputation radar on my own name
