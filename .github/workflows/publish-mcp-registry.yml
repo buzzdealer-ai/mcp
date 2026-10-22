@@ -6,8 +6,14 @@ name: Publish to the MCP Registry
 on:
   push:
     branches: [main]
-    paths: [server.json, .github/workflows/publish-mcp-registry.yml]
+    # Only server.json: a push that changes this file alone would try to publish the same version again.
+    paths: [server.json]
   workflow_dispatch:
+    inputs:
+      domain_entry:
+        description: "Also publish server.domain.json as ai.buzzdealer/mcp (needs the MCP_REGISTRY_PRIVATE_KEY secret)"
+        type: boolean
+        default: false
 
 permissions:
   id-token: write
@@ -15,6 +21,7 @@ permissions:
 
 jobs:
   publish:
+    if: github.event_name == 'push' || !inputs.domain_entry
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,3 +35,37 @@ jobs:
         run: ./mcp-publisher login github-oidc
       - name: Publish
         run: ./mcp-publisher publish
+
+  # The second entry, under our own domain (ai.buzzdealer/mcp), verified over HTTP: the registry reads
+  # https://buzzdealer.ai/.well-known/mcp-registry-auth (the public key, set in the Buzz Dealer AI admin) and checks the
+  # signature made here with the private key, which lives only in the MCP_REGISTRY_PRIVATE_KEY secret. By hand only.
+  # Note: the registry refuses a remote URL another server name already uses, so this publish fails while the
+  # io.github entry holds https://mcp.buzzdealer.ai/mcp (see README, "Two Registry entries").
+  publish-domain:
+    if: github.event_name == 'workflow_dispatch' && inputs.domain_entry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the secret is there (never printed)
+        env:
+          KEY: ${{ secrets.MCP_REGISTRY_PRIVATE_KEY }}
+        run: |
+          [ -n "$KEY" ] || { echo "::error::the MCP_REGISTRY_PRIVATE_KEY secret is not set (Settings, Secrets and variables, Actions)"; exit 1; }
+          case "$KEY" in *[!0-9a-fA-F]*) echo "::error::MCP_REGISTRY_PRIVATE_KEY must be the hex private key (64 characters), see README"; exit 1;; esac
+          [ ${#KEY} -eq 64 ] || { echo "::error::MCP_REGISTRY_PRIVATE_KEY must be 64 hex characters, it has ${#KEY}"; exit 1; }
+      - name: Check the domain proof is published
+        run: |
+          proof=$(curl -fsS --max-time 15 https://buzzdealer.ai/.well-known/mcp-registry-auth) || { echo "::error::https://buzzdealer.ai/.well-known/mcp-registry-auth does not answer: paste the public line in the admin first"; exit 1; }
+          case "$proof" in "v=MCPv1; k=ed25519; p="*) echo "domain proof found";; *) echo "::error::the domain proof does not start with v=MCPv1; k=ed25519; p="; exit 1;; esac
+      - name: Install mcp-publisher
+        run: |
+          os=$(uname -s | tr '[:upper:]' '[:lower:]')
+          arch=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_${os}_${arch}.tar.gz" | tar xz mcp-publisher
+      - name: Sign in for buzzdealer.ai and publish ai.buzzdealer/mcp
+        env:
+          KEY: ${{ secrets.MCP_REGISTRY_PRIVATE_KEY }}
+        run: |
+          mkdir domain && cp server.domain.json domain/server.json && cd domain
+          ../mcp-publisher login http --domain buzzdealer.ai --private-key "$KEY"
+          ../mcp-publisher publish

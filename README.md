@@ -72,6 +72,11 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 - **Agent skill:** [skills/buzzdealer-ai/SKILL.md](skills/buzzdealer-ai/SKILL.md), the order flow and the rules. On skills.sh, once this repository is public, the expected command is `npx skills add buzzdealer-ai/mcp`.
 - **npm package (not yet published):** [packages/npm](packages/npm), `npx buzzdealer-ai add cursor`, `add vscode` or `add claude-code`, plus a small typed client for the REST API.
 - **MCP Registry:** `io.github.buzzdealer-ai/mcp`, see https://registry.modelcontextprotocol.io/v0/servers?search=io.github.buzzdealer-ai/mcp
+- **Developers:** every link (MCP server, REST API, OpenAPI spec, sign-in and scopes, API keys) on one page: https://buzzdealer.ai/developers
+
+### Two Registry entries
+
+`server.json` is published as `io.github.buzzdealer-ai/mcp` (GitHub sign-in, automatic on a change). `server.domain.json` is the same server under our own domain, `ai.buzzdealer/mcp`, verified over HTTP: the public key is served at https://buzzdealer.ai/.well-known/mcp-registry-auth and the private key is only the `MCP_REGISTRY_PRIVATE_KEY` Actions secret. It is published by hand (Actions, "Publish to the MCP Registry", tick "domain entry"). The Registry allows one server name per remote URL, so the domain entry can be published only once the address is not held by the other entry.
 
 ## Example prompts
 
