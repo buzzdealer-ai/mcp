@@ -1,15 +1,16 @@
 # Buzz Dealer AI MCP server
 
-PR and press release distribution, and reputation, from ChatGPT, Claude and other AI assistants. Buzz Dealer AI gives your assistant two things: a **Press Room** for press release distribution through newswires (including PR Newswire packages), PR distribution packages and news sites that publish your article or press release, and a **Reputation Agent** that scans what Google, AI assistants and the web say about you or your company, asks what it cannot know, and shows the gaps and the steps that help.
+Press release distribution, digital PR and reputation checks from ChatGPT, Claude and other AI assistants. Buzz Dealer AI gives your assistant two things: a **Press Room** for press release distribution through newswires (including PR Newswire packages), PR distribution packages and news sites that publish your sponsored article, guest post or press release, and a **Reputation Agent**, a personal and brand reputation check that scans what Google, AI assistants and the web say about you or your company (AI visibility included), asks what it cannot know, and shows the gaps and the steps that help.
 
 **Connector address:** https://mcp.buzzdealer.ai/mcp (remote MCP server, streamable HTTP)
 **Sign-in:** OAuth 2.1. Agents that cannot do OAuth can use a personal API key as a Bearer token.
 **Setup guide:** https://buzzdealer.ai/connect
 **Pricing:** https://buzzdealer.ai/pricing
+**What it is for:** [press release distribution](https://buzzdealer.ai/press-release-distribution), [digital PR](https://buzzdealer.ai/digital-pr), [brand reputation check](https://buzzdealer.ai/brand-reputation-check), [personal reputation check](https://buzzdealer.ai/personal-reputation-check), [AI visibility](https://buzzdealer.ai/ai-visibility), [the MCP server](https://buzzdealer.ai/mcp)
 **Support:** support@buzzdealer.ai
 
 **Access:** the Reputation Agent is open to everyone. The Press Room is in private beta: request an invite at https://buzzdealer.ai/beta.
-**Before signing in:** two read-only tools work without an account, `check_company_presence` (a light check of a company's own home page and Wikidata) and `get_ai_visibility_score`. Everything else asks you to sign in.
+**Before signing in:** two read-only tools work without an account, `check_company_presence` (a light brand reputation check of a company's own home page and Wikidata) and `get_ai_visibility_score` (an AI visibility checker for news sites, a GEO score). Everything else asks you to sign in.
 
 This repository is the public listing for the hosted server. It has no server code.
 
@@ -91,6 +92,8 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 
 ## Tools
 
+Since 23 October 2026 the earlier names `radar_scan`, `plan_fixes` and `confirm_statement` (same as `start_radar`, `get_gaps` and `answer_question`) are no longer listed; a client that kept one can call it until 22 November 2026.
+
 ### Read only
 
 | Tool | What it does |
@@ -98,17 +101,16 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 | find_publications | Finds newswire packages, PR distribution packages and news sites in the Press Room |
 | get_publication | Shows one publication: price, audience, rules and turnaround |
 | plan_campaign | Plans a campaign within a budget |
-| get_ai_visibility_score | Shows how visible a news site in the catalog is to AI assistants (beta; works before signing in) |
+| get_ai_visibility_score | AI visibility checker for news sites in the catalog: a GEO score from 0 to 100 (beta; works before signing in) |
 | check_originality_and_fit | Checks a text before it is ordered |
 | get_order_status | Shows where an order is |
 | get_report | Shows a report |
 | get_account_status | Shows the account, balance and limits |
 | get_linked_account | Shows which account this connection uses: name, plan and balance |
-| check_company_presence | A light check of a company's own home page and Wikidata (works before signing in) |
+| check_company_presence | A light brand reputation check of a company's own home page and Wikidata (works before signing in) |
 | get_radar_status | Reads a reputation scan as it runs |
 | get_questions | Gets the next question the agent cannot answer alone |
 | get_gaps | Lists the gaps found and the fixes for each |
-| plan_fixes | Same as get_gaps |
 | get_progress | Shows progress against the first scan |
 | what_changed | Shows what changed since the last scan |
 | get_playbook | Gets the Reputation Agent playbook |
@@ -122,9 +124,7 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 | start_radar | Starts a reputation scan |
 | quote_order | Quotes an order and holds the price; nothing is charged |
 | start_fix | Starts a fix and shows its steps |
-| radar_scan | Same as start_radar |
 | answer_question | Answers a question ("this is mine", "this is about me", "not me") |
-| confirm_statement | Same as answer_question |
 | set_preferences | Saves preferences |
 | update_reputation_profile | Updates the saved profile |
 | mark_fix_done | Marks a fix done and checks it on the next scan |
@@ -140,7 +140,7 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
 
 ## Prompts
 
-The server also offers five prompts: send a press release to a newswire, find a PR distribution package, how AI assistants describe my company, what changed since the last scan, and plan a PR campaign within a budget. Each one quotes first and orders nothing without your yes.
+The server also offers six prompts: send a press release to a newswire, find a PR distribution package, how AI assistants describe my company, what changed since the last scan, plan a PR campaign within a budget, and check how AI assistants see my brand (AI visibility). Each one quotes first and orders nothing without your yes.
 
 ## Pricing
 
