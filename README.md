@@ -69,6 +69,7 @@ Guides for Grok, Perplexity, OpenClaw, Hermes, Manus, Lindy, Genspark, Devin and
   /plugin install buzzdealer-ai --marketplace buzzdealer-ai/mcp
   ```
   On an older Claude Code: `/plugin marketplace add buzzdealer-ai/mcp`, then `/plugin install buzzdealer-ai@buzzdealer-ai`.
+- **Agent Plugins:** [plugin.json](plugin.json) at the root follows the Agent Plugins manifest (`$schema` https://agent-plugins.org/schemas/1.0.0/plugin.schema.json), with the skill in [skills/](skills) and the server in [.mcp.json](.mcp.json).
 - **Agent skill:** [skills/buzzdealer-ai/SKILL.md](skills/buzzdealer-ai/SKILL.md), the order flow and the rules. On skills.sh, once this repository is public, the expected command is `npx skills add buzzdealer-ai/mcp`.
 - **npm package (not yet published):** [packages/npm](packages/npm), `npx buzzdealer-ai add cursor`, `add vscode` or `add claude-code`, plus a small typed client for the REST API.
 - **MCP Registry:** `io.github.buzzdealer-ai/mcp`, see https://registry.modelcontextprotocol.io/v0/servers?search=io.github.buzzdealer-ai/mcp

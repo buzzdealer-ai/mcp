@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "buzzdealer-ai",
+  "version": "1.3.0",
+  "description": "PR and press release distribution via newswires (the Press Room) and a Reputation Agent, through the Buzz Dealer AI remote MCP server, with the agent skill for the safe order flow.",
+  "license": "MIT",
+  "homepage": "https://buzzdealer.ai/developers",
+  "repository": "https://github.com/buzzdealer-ai/mcp",
+  "keywords": ["mcp", "press-release", "pr-distribution", "newswire", "press-room", "reputation", "skills"]
+}
