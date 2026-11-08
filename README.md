@@ -7,7 +7,7 @@ Press release distribution, digital PR and reputation checks from ChatGPT, Claud
 **Setup guide:** https://buzzdealer.ai/connect
 **Pricing:** https://buzzdealer.ai/pricing
 **What it is for:** [press release distribution](https://buzzdealer.ai/press-release-distribution), [digital PR](https://buzzdealer.ai/digital-pr), [brand reputation check](https://buzzdealer.ai/brand-reputation-check), [personal reputation check](https://buzzdealer.ai/personal-reputation-check), [AI visibility](https://buzzdealer.ai/ai-visibility), [the MCP server](https://buzzdealer.ai/mcp)
-**Support:** support@buzzdealer.ai
+**Support:** support@buzzdealer.ai, or ask your assistant to contact Buzz Dealer AI support
 
 **Access:** the Reputation Agent is open to everyone. The Press Room is in private beta: request an invite at https://buzzdealer.ai/beta.
 **Before signing in:** two read-only tools work without an account, `check_company_presence` (a light brand reputation check of a company's own home page and Wikidata) and `get_ai_visibility_score` (an AI visibility checker for news sites, a GEO score). Everything else asks you to sign in.
@@ -45,7 +45,7 @@ Then type `/mcp` and sign in.
 
 ### Gemini
 
-- **Gemini app:** Settings, Connected Apps, Add a custom app, paste the address, then sign in.
+- **Gemini app:** on gemini.google.com, Customize, Connectors, + Custom. Paste the address, tick the notice, Connect, then sign in.
 - **Gemini CLI:** `gemini mcp add --transport http buzzdealer-ai https://mcp.buzzdealer.ai/mcp`
 
 ### Cursor, VS Code and other MCP clients
@@ -128,6 +128,7 @@ Since 23 October 2026 the earlier names `radar_scan`, `plan_fixes` and `confirm_
 | set_preferences | Saves preferences |
 | update_reputation_profile | Updates the saved profile |
 | mark_fix_done | Marks a fix done and checks it on the next scan |
+| contact_support | Opens a support request to the Buzz Dealer AI team (shown to you first); the answer comes by email and on your Support page |
 | rate_fix | Records whether a fix worked |
 
 ### Spend credits (the assistant confirms with you first)
