@@ -9,7 +9,7 @@ Press release distribution, digital PR and reputation checks from ChatGPT, Claud
 **What it is for:** [press release distribution](https://buzzdealer.ai/press-release-distribution), [digital PR](https://buzzdealer.ai/digital-pr), [brand reputation check](https://buzzdealer.ai/brand-reputation-check), [personal reputation check](https://buzzdealer.ai/personal-reputation-check), [AI visibility](https://buzzdealer.ai/ai-visibility), [the MCP server](https://buzzdealer.ai/mcp)
 **Support:** support@buzzdealer.ai, or ask your assistant to contact Buzz Dealer AI support
 
-**Access:** the Reputation Agent is open to everyone. The Press Room is in private beta: request an invite at https://buzzdealer.ai/beta.
+**Access:** open to everyone: the Reputation Agent and the Press Room. Sign in once with your email; Press Room orders use credits you add in the dashboard.
 **Before signing in:** two read-only tools work without an account, `check_company_presence` (a light brand reputation check of a company's own home page and Wikidata) and `get_ai_visibility_score` (an AI visibility checker for news sites, a GEO score). Everything else asks you to sign in.
 
 This repository is the public listing for the hosted server. It has no server code.
